@@ -965,56 +965,6 @@ function sendSMS(phone, message) {
         =======================================-->
         <!-- FOR BOOTSTRAP -->
         <script type="text/javascript">
-            // Function to create a full-screen popup
-function createFullScreenPopup(imageSrc) {
-  // Create the popup div
-  var popup = document.createElement('div');
-  popup.style.position = 'fixed';
-  popup.style.top = '0';
-  popup.style.left = '0';
-  popup.style.width = '100%';
-  popup.style.height = '100%';
-  popup.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-  popup.style.display = 'flex';
-  popup.style.justifyContent = 'center';
-  popup.style.alignItems = 'center';
-  popup.style.zIndex = '1000';
-
-  // Create the close button
-  var closeButton = document.createElement('div');
-  closeButton.innerHTML = 'X';
-  closeButton.style.position = 'absolute';
-  closeButton.style.top = '10%';
-  closeButton.style.left = '80%';
-  closeButton.style.transform = 'translate(-50%, -50%)';
-  closeButton.style.color = 'white';
-  closeButton.style.fontSize = '30px';
-  closeButton.style.cursor = 'pointer';
-
-  // Close the popup when the close button is clicked
-  closeButton.onclick = function() {
-    document.body.removeChild(popup);
-  };
-
-  // Append the close button to the popup
-  popup.appendChild(closeButton);
-
-  // Create the image element
-  var img = document.createElement('img');
-  img.src = imageSrc;
-  img.style.maxWidth = '80%';
-  img.style.maxHeight = '80%';
-  img.style.objectFit = 'contain';
-
-  // Append the image to the popup
-  popup.appendChild(img);
-
-  // Append the popup to the body
-  document.body.appendChild(popup);
-}
-
-// Example usage: Call the function with an image URL
-createFullScreenPopup('assets/images/scanner.png');
 document.addEventListener('contextmenu', function(event) {
   event.preventDefault();
 });
