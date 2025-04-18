@@ -12,31 +12,89 @@
         <meta name="author" content="Mironcoder">
         <meta name="email" content="mironcoder@gmail.com">
         <meta name="profile" content="https://themeforest.net/user/mironcoder">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #222;
+    }
+
+    .table-container {
+      max-width: 900px;
+      margin: auto;
+      overflow-x: auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      min-width: 400px;
     }
+
     th, td {
-      border: 1px solid #999;
-      padding: 10px;
+      padding: 14px 20px;
       text-align: left;
+      border-bottom: 1px solid #eaeaea;
     }
+
     th {
-      background-color: #f4f4f4;
+      background-color: #f1f1f1;
+      font-weight: 600;
     }
+
+    td a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    td a:hover {
+      text-decoration: underline;
+    }
+
     .pagination {
-      margin-top: 20px;
       text-align: center;
+      margin-top: 20px;
     }
+
     .pagination button {
-      padding: 8px 12px;
-      margin: 2px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      margin: 0 5px;
+      padding: 8px 14px;
+      border-radius: 6px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .pagination button:hover {
+      background-color: #0056b3;
+    }
+
+    @media screen and (max-width: 600px) {
+      th, td {
+        padding: 12px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
     }
   </style>
+
         <!-- TEMPLATE META -->
         <meta name="name" content="Shrikant Maid">
         <meta name="type" content="Shrikant Maid Web Developer">
@@ -554,34 +612,37 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                       <table id="portfolio-table">
-  <thead>
-    <tr>
-      <th>Sr. No.</th>
-      <th>Website URL</th>
-      <th>Technologies Used</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Data will be injected here -->
-  </tbody>
-</table>
+                       <div class="table-container">
+  <table id="portfolio-table">
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Website URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data will be populated here -->
+    </tbody>
+  </table>
+</div>
 
 <div class="pagination" id="pagination"></div>
 
 <script>
   const portfolioData = [
-    { url: 'https://example1.com', tech: 'HTML, CSS, JS' },
-    { url: 'https://example2.com', tech: 'WordPress' },
-    { url: 'https://example3.com', tech: 'PHP, MySQL' },
-    { url: 'https://example4.com', tech: 'React, Node.js' },
-    { url: 'https://example5.com', tech: 'HTML, Bootstrap' },
-    { url: 'https://example6.com', tech: 'Vue.js, Firebase' },
-    { url: 'https://example7.com', tech: 'Laravel, MySQL' },
-    { url: 'https://example8.com', tech: 'Shopify' },
-    { url: 'https://example9.com', tech: 'Angular, Spring Boot' },
-    { url: 'https://example10.com', tech: 'Next.js, MongoDB' },
-    // Add more items as needed
+    { url: 'https://example1.com' },
+    { url: 'https://example2.com' },
+    { url: 'https://example3.com' },
+    { url: 'https://example4.com' },
+    { url: 'https://example5.com' },
+    { url: 'https://example6.com' },
+    { url: 'https://example7.com' },
+    { url: 'https://example8.com' },
+    { url: 'https://example9.com' },
+    { url: 'https://example10.com' },
+    { url: 'https://example11.com' },
+    { url: 'https://example12.com' },
+    // Add more websites here
   ];
 
   const rowsPerPage = 5;
@@ -598,7 +659,6 @@
         <tr>
           <td>${start + index + 1}</td>
           <td><a href="${item.url}" target="_blank">${item.url}</a></td>
-          <td>${item.tech}</td>
         </tr>
       `;
     });
@@ -622,7 +682,6 @@
     displayTable(currentPage);
   }
 
-  // Initial load
   $(document).ready(function () {
     setupPagination();
     displayTable(currentPage);
