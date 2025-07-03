@@ -8336,15 +8336,9 @@ textarea:focus-within {
   }
 }
 
-html[data-bs-theme=light] .team__item-author--style1{
+html[data-bs-theme=light] .team__item-author--style1 {
   background-color: rgba(0, 21, 15, 0.8);
   backdrop-filter: blur(2px);
-}
-html[data-bs-theme=light] .about--style1, .case-studies, .experience{
- background-color: #FFF;
-}
-html[data-bs-theme=light]. .trk-btn--primary, .trk-btn--outline, .trk-btn--outline{
-  background-color: #000000;
 }
 html[data-bs-theme=light] .team__item-inner--shape2 {
   background-color: #051a14;
