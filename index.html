@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="assets/css/all.min.css">
 
   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
 
@@ -50,22 +51,6 @@
     </div>
   </div>
   <!-- ===============>> Preloader end here <<================= -->
-
-
-
-
-
-  <!-- ===============>> light&dark switch start here <<================= -->
-  <!-- <div class="lightdark-switch">
-    <span class="switch-btn" id="btnSwitch"><img src="assets/images/icon/moon.svg" alt="light-dark-switchbtn"
-        class="swtich-icon"></span>
-  </div> -->
-  <!-- ===============>> light&dark switch start here <<================= -->
-
-
-
-
-
   <!-- ===============>> Header section start here <<================= -->
   <header class="header-section header-section--style2">
     <div class="container">
@@ -97,6 +82,16 @@
           </ul>
 
         </div>
+
+        <!-- ===============>> light&dark switch start here <<================= -->
+        <div class="lightdark-switch">
+            <span class="switch-btn" id="btnSwitch">
+                <i class="fa-solid fa-moon swtich-icon" id="themeIcon"></i>
+             </span>
+        </div>
+
+        <!-- ===============>> light&dark switch start here <<================= -->
+
         <div class="header-action">
           <div class="menu-area">
             <div class="header-btn">
@@ -1271,6 +1266,24 @@
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/fslightbox.js"></script>
   <script src="assets/js/purecounter_vanilla.js"></script>
+  <script>
+  const btnSwitch = document.getElementById("btnSwitch");
+  const icon = document.getElementById("themeIcon");
+
+  btnSwitch.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-bs-theme");
+
+    if (currentTheme === "dark") {
+      document.documentElement.setAttribute("data-bs-theme", "light");
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    } else {
+      document.documentElement.setAttribute("data-bs-theme", "dark");
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    }
+  });
+</script>
 
 <script>
   function sendToWhatsApp(event) {
