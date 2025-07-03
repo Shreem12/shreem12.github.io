@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
   <!-- Sites meta Data -->
   <meta name="application-name" content="Shrikant Maid - Professional Web Developer Portfolio">
@@ -873,10 +874,7 @@
   </section>
   <!-- ===============>> experience section end here <<================= -->
 
-
-
-
-  <!-- ===============>> Pricing section start here <<================= -->
+ <!-- ===============>> Pricing section start here <<================= -->
   <section class="pricing padding-top padding-bottom bg-grid">
     <div class="section-header text-center mb-lg-3" data-aos="fade-up" data-aos-duration="1000">
       <div class="subtitle">
@@ -898,7 +896,8 @@
                     <h3 class="mb-25">5-10K <span>Rs.</span> </h3>
 
                     <div class="pricing__item-btn">
-                      <a href="https://wa.me/919890964512" target="_blank" class="trk-btn trk-btn--outline text-center w-100">Enquire Now</a>
+                     <!-- <a href="#" id="rzp-button1" target="_blank" class="trk-btn trk-btn--outline text-center w-100">Enquire Now</a>-->
+                      <button id="rzp-button1" class="trk-btn trk-btn--outline text-center w-100">Pay ₹99</button>
                       <small> Best for company website, portfolio, informative website or landing pages. Free 30 mins consultancy if paid now.</small>
                     </div>
                   </div>
@@ -940,7 +939,8 @@
                     <h3 class="mb-25">15-20K <span>Rs.</span> </h3>
 
                     <div class="pricing__item-btn">
-                      <a href="https://wa.me/919890964512" target="_blank" class="trk-btn trk-btn--outline active text-center w-100">Enquire Now</a>
+                      <!--<a href="https://wa.me/919890964512" target="_blank" class="trk-btn trk-btn--outline active text-center w-100">Enquire Now</a>-->
+                       <button id="rzp-button2" class="trk-btn trk-btn--outline active text-center w-100">Pay ₹99</button>
                       <small> Sell anything online, Shopify, Wordpress, PHP and custom. Grocery, food delivery, Sell anything online. Free 30 mins consultancy if paid now.</small>
                     </div>
 
@@ -981,7 +981,8 @@
                     <h3 class="mb-25">25-30K <span>Rs.</span> </h3>
 
                     <div class="pricing__item-btn">
-                      <a href="https://wa.me/919890964512" target="_blank" class="trk-btn trk-btn--outline text-center w-100">Enquire Now</a>
+                     <!-- <a href="https://wa.me/919890964512" target="_blank" class="trk-btn trk-btn--outline text-center w-100">Enquire Now</a>-->
+                      <button id="rzp-button3" class="trk-btn trk-btn--outline text-center w-100">Pay ₹99</button>
                       <small>Special websites with new ideas and build something great. Startup ideas. Free 30 mins consultancy if paid now.</small>
                     </div>
                   </div>
@@ -1019,7 +1020,6 @@
     <div class="overlay overlay--bottom-right"></div>
   </section>
   <!-- ===============>> Pricing section start here <<================= -->
-
 
 
   <!-- ===============>> Contact section start here <<================= -->
@@ -1264,7 +1264,55 @@
 
 
   <!-- vendor plugins -->
+  
+<script>
+  function launchRazorpay(amount, description) {
+    const options = {
+      key: "rzp_test_QnzYnKoa9fME4R", // Test key
+      amount: amount, // In paisa
+      currency: "INR",
+      name: "Shrikant Maid",
+      description: description,
+      image: "https://shreem12.github.io/assets/images/logo/preloader.png",
+      handler: function (response) {
+        alert("Payment successful!");
+        console.log("Payment ID:", response.razorpay_payment_id);
+      },
+      prefill: {
+        name: "Shrikant Maid",
+        email: "shrikantmaid9@gmail.com",
+        contact: "+91 9890964512",
+      },
+      notes: {
+        address: "Pune",
+      },
+      theme: {
+        color: "#3399cc",
+      }
+    };
 
+    const rzp = new Razorpay(options);
+    rzp.open();
+  }
+
+  // Button 1: ₹99
+  document.getElementById('rzp-button1').onclick = function (e) {
+    launchRazorpay("9900", "Book Free Website Development Consultation by paying ₹99");
+    e.preventDefault();
+  };
+
+  // Button 2: ₹199
+  document.getElementById('rzp-button2').onclick = function (e) {
+    launchRazorpay("9900", "Premium Design Audit for ₹99");
+    e.preventDefault();
+  };
+
+  // Button 3: ₹299
+  document.getElementById('rzp-button3').onclick = function (e) {
+    launchRazorpay("9900", "Complete Digital Strategy Call for ₹99");
+    e.preventDefault();
+  };
+</script>
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/all.min.js"></script>
   <script src="assets/js/swiper-bundle.min.js"></script>
