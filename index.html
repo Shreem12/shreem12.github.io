@@ -56,12 +56,6 @@
 
 
 
-  <!-- ===============>> light&dark switch start here <<================= -->
-  <!-- <div class="lightdark-switch">
-    <span class="switch-btn" id="btnSwitch"><img src="assets/images/icon/moon.svg" alt="light-dark-switchbtn"
-        class="swtich-icon"></span>
-  </div> -->
-  <!-- ===============>> light&dark switch start here <<================= -->
 
 
 
@@ -96,6 +90,13 @@
               <a href="#contact">Contact Me</a>
             </li>
           </ul>
+            <!-- ===============>> light&dark switch start here <<================= -->
+  <div class="lightdark-switch" style="padding-left: 5vw;">
+    <span class="switch-btn" id="btnSwitch">
+      <i class="fas fa-moon" style="font-size: 24px; color: #FFF;"></i>
+    </span>
+  </div>
+  <!-- ===============>> light&dark switch start here <<================= -->
 
         </div>
         <div class="header-action">
@@ -1276,7 +1277,25 @@
 
 
   <!-- vendor plugins -->
-  
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const switchBtn = document.getElementById("btnSwitch");
+    const htmlTag = document.documentElement; // <html>
+
+    switchBtn.addEventListener("click", function () {
+      const currentTheme = htmlTag.getAttribute("data-bs-theme");
+
+      if (currentTheme === "dark") {
+        htmlTag.setAttribute("data-bs-theme", "light");
+        switchBtn.innerHTML = '<i class="fas fa-moon" style="font-size: 24px; color: #000;"></i>';
+      } else {
+        htmlTag.setAttribute("data-bs-theme", "dark");
+        switchBtn.innerHTML = '<i class="fas fa-sun" style="font-size: 24px; color: #FFD700;"></i>';
+      }
+    });
+  });
+</script>
+
 <script>
   function launchRazorpay(amount, description) {
     const options = {
