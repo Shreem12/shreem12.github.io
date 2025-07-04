@@ -8353,6 +8353,9 @@ html[data-bs-theme=light] .team__item-author--style1 {
 html[data-bs-theme=light] .bg-grid, .about, .case-studies{
   background-color: #FFF;
 }
+html[data-bs-theme=dark] .bg-grid, .about, .case-studies{
+  background-color: hsl(60, 2%, 7%);
+}
 html[data-bs-theme=light] .team__item-inner--shape2 {
   background-color: #051a14;
 }
