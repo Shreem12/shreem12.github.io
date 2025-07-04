@@ -512,6 +512,16 @@ ol {
   z-index: -1;
   transition: all 3s ease-in-out;
 }
+[data-bs-theme=light] {
+  --brand-color: #C4EF17;
+   --border-color:#333;
+    --form-border:#333;
+  --form-border-2:#333;
+ --secondary-color:#6B7FFF;
+  --body-color:#FFF;
+
+  
+}
 
 [data-bs-theme=dark] {
   --brand-color: #C4EF17;
@@ -8339,6 +8349,9 @@ textarea:focus-within {
 html[data-bs-theme=light] .team__item-author--style1 {
   background-color: rgba(0, 21, 15, 0.8);
   backdrop-filter: blur(2px);
+}
+html[data-bs-theme=light] .bg-grid, .about, .case-studies{
+  background-color: #FFF;
 }
 html[data-bs-theme=light] .team__item-inner--shape2 {
   background-color: #051a14;
